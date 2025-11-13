@@ -1,28 +1,29 @@
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
+const container = document.querySelector('.carousel-container');
 
-let current = 0;
+let currentIndex = 0;
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if(i === index) slide.classList.add('active');
-  });
+function updateSlide() {
+  const offset = -currentIndex * 100; // slide width 100%
+  container.style.transform = `translateX(${offset}%)`;
 }
 
-prevBtn.addEventListener('click', () => {
-  current = (current === 0) ? slides.length - 1 : current - 1;
-  showSlide(current);
-});
-
+// Next slide
 nextBtn.addEventListener('click', () => {
-  current = (current === slides.length - 1) ? 0 : current + 1;
-  showSlide(current);
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlide();
 });
 
-// Optional: auto-slide
+// Previous slide
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlide();
+});
+
+// Optional auto-slide
 setInterval(() => {
-  current = (current === slides.length - 1) ? 0 : current + 1;
-  showSlide(current);
-}, 5000); // change every 5 seconds
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlide();
+}, 5000);

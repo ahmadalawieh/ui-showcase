@@ -1,35 +1,12 @@
-body {
-    font-family: system-ui, sans-serif;
-    background: #f7f9fc;
+.carousel-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .carousel {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
+    width: 100%;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  }
-  
-  .carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
   }
   
   .slide {
-    min-width: 100%;
-    transition: opacity 0.5s ease;
-    opacity: 0;
-  }
-  
-  .slide.active {
-    opacity: 1;
+    min-width: 100%; /* one slide visible at a time */
+    transition: transform 0.5s ease-in-out;
   }
   
   .slide img {
@@ -38,7 +15,6 @@ body {
     border-radius: 15px;
   }
   
-  /* Navigation buttons */
   .prev, .next {
     position: absolute;
     top: 50%;
@@ -55,13 +31,4 @@ body {
   
   .prev { left: 10px; }
   .next { right: 10px; }
-  
-  .prev:hover, .next:hover {
-    background: rgba(0,0,0,0.8);
-  }
-  
-  /* Responsive */
-  @media(max-width: 600px){
-    .prev, .next { font-size: 1.5rem; }
-  }
   
