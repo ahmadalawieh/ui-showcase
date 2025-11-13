@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Components</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Carousel Variants</h1>
+    <p>Click a carousel to preview the live component.</p>
+  </header>
+
+  <main class="components">
+    <a href="carousel-1/index.html" class="component-card">Carousel 1</a>
+    <!-- Future carousels: Carousel 2, 3, etc. -->
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Ahmad Alawieh</p>
+    <p><a href="../../index.html">← Back to main page</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
