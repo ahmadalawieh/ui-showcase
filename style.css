@@ -1,43 +1,96 @@
-body {
-    font-family: system-ui, sans-serif;
-    background: #f8f9fb;
-    color: #222;
-    text-align: center;
-    padding: 60px 20px;
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   
-  h1 {
-    font-size: 2rem;
+  body {
+    font-family: system-ui, sans-serif;
+    background: #f7f9fc;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 60px 20px 40px;
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
     margin-bottom: 10px;
   }
   
-  p {
-    color: #666;
-    margin-bottom: 40px;
+  header p {
+    color: #555;
   }
   
-  .component-list {
+  /* Component grid */
+  .components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 20px 60px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Component cards */
+  .component-card {
+    background: white;
+    border-radius: 14px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
-  .component-list a {
+  .component-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  .component-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .component-card p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Button */
+  .btn {
     display: inline-block;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 15px 30px;
+    background: #111;
+    color: #fff;
     text-decoration: none;
-    color: #111;
+    padding: 10px 20px;
+    border-radius: 8px;
     font-weight: 500;
-    transition: all 0.2s ease;
-    width: 250px;
+    transition: background 0.2s ease;
+    align-self: flex-start;
   }
   
-  .component-list a:hover {
-    background: #111;
-    color: white;
+  .btn:hover {
+    background: #0078ff;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: #777;
   }
   
