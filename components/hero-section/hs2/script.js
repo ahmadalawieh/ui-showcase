@@ -5,4 +5,3 @@ window.addEventListener('DOMContentLoaded', () => {
     heroText.classList.add('visible');
   }, 200);
 });
-  
